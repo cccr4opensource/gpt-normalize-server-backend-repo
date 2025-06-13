@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+
+openai:
+  api-key: ${OPEN_API_KEY}
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/productdb
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+#    snake_case <-> camelCase 매핑이 작동됨
+#
+#    property-naming-strategy: SNAKE_CASE
+#    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+    
+  
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+
+
